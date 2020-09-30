@@ -14,6 +14,6 @@ public class SearchPage {
 	}
 
 	@AndroidFindBy(xpath="//android.widget.EditText[@text='Search']")
-public	WebElement search;
+	public	WebElement search;
 
 }
