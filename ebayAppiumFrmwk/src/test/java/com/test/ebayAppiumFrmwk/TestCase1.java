@@ -13,7 +13,8 @@ import com.resources.pageObjects.LoginPage;
 import com.resources.pageObjects.LoginPasswordPage;
 import com.resources.pageObjects.SearchPage;
 import com.resources.pageObjects.SignInpage;
-import com.resources.reusableComponents.ReusableCom;
+import com.resources.reusableComponents.Iautoconstant;
+import com.resources.reusableComponents.ReusableComponents;
 
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
@@ -24,12 +25,14 @@ import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import junit.framework.Assert;
 
-public class TestCase1 extends BaseClass {
+public class TestCase1 extends BaseClass implements Iautoconstant{
 
-	public static void main(String[] args) throws MalformedURLException, InterruptedException {
+	public static void main(String[] args) throws Throwable {
 
+		ReusableComponents rc = new ReusableComponents();
 
-		AndroidDriver<AndroidElement> driver=capabilitis("Amazon_shopping.apk");
+		
+		AndroidDriver<AndroidElement> driver=capabilitis(rc.getKeyPropValue(PROP_PATH, "apkFileName"));
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		/**
@@ -43,12 +46,12 @@ public class TestCase1 extends BaseClass {
 		Thread.sleep(2000);
 
 		CustomerLoginPage clp = new CustomerLoginPage(driver);
-		ReusableCom rc = new ReusableCom();
-		clp.loginSearchBox.sendKeys("6205718115");
+	//	 ReusableComponents rc = new ReusableComponents();
+		clp.loginSearchBox.sendKeys(rc.getKeyPropValue(PROP_PATH, "phoneNumber"));
 		clp.continuee.click();
 
 		LoginPasswordPage lpp = new LoginPasswordPage(driver);
-		lpp.amazopassword.sendKeys("kama1234");
+		lpp.amazopassword.sendKeys(rc.getKeyPropValue(PROP_PATH, "password"));
 		lpp.signInSUbmit.click();
 
 		/**
@@ -68,7 +71,7 @@ public class TestCase1 extends BaseClass {
 		hp.searchbox.click();
 		Thread.sleep(3000);
 		SearchPage sp = new SearchPage(driver);
-		sp.search.sendKeys("Samsung 65 inch tv");
+		sp.search.sendKeys(rc.getKeyPropValue(PROP_PATH, "applnSEARCH"));
 		Thread.sleep(20000);
 
 		((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
