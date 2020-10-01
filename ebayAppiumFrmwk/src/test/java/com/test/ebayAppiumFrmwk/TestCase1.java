@@ -123,7 +123,7 @@ public class TestCase1 extends BaseClass implements Iautoconstant{
 		/**
 		 * 
 		 * @author kamlesh
-		 * sometimes add to cart button doent work
+		 * sometimes add to cart button doesn't work
 		 * then you need to manually scroll to add to cart 
 		 * button.
 		 * 
@@ -147,7 +147,7 @@ public class TestCase1 extends BaseClass implements Iautoconstant{
 		/**
 		 * @author kamlesh
 		 * you have to change the xpath of  address
-		 * of the user 
+		 * of the user  while using
 		 * 
 		 */
 
@@ -161,8 +161,8 @@ public class TestCase1 extends BaseClass implements Iautoconstant{
 		/**
 		 * 
 		 * if UI of the application doesnt take you to the Checkout page
-		 * then you need change the xpath of  checkOutproductPricetext and do 
-		 * the assertion accordingly.
+		 * then you need change the xpath of  checkOutproductPricetext from buy now page  
+		 * and do the assertion accordingly.
 		 * 
 		 */
 
