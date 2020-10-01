@@ -47,9 +47,9 @@ public class TestCase1 extends BaseClass implements Iautoconstant{
 		 * signin button
 		 * 
 		 */
-		
 
-/*
+
+
 		SignInpage sip = new SignInpage(driver);
 		sip.alreadyCoustomer.click();
 
@@ -72,7 +72,7 @@ public class TestCase1 extends BaseClass implements Iautoconstant{
 		lpp.signInSUbmit.click();
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.EditText[@text='Search']")));
-*/
+
 
 		/**
 		 * 
@@ -84,11 +84,12 @@ public class TestCase1 extends BaseClass implements Iautoconstant{
 		 * 
 		 */
 
-		     
+		/*	     
 	   LoginPage lp = new LoginPage(driver);
 	   lp.skipSignIn.click();
+		 */
 
-		 
+
 
 		HomePage hp = new HomePage(driver);
 		hp.searchbox.click();
